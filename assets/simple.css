@@ -1,0 +1,22 @@
+body {
+  margin: auto;
+  width: auto;
+  padding: 50px;
+  font-family: 'Arial', sans-serif;
+  color: #33475b;
+  background-color: black;
+}
+
+/* Centered Image Code */
+
+.center {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
