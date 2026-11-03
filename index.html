@@ -39,6 +39,19 @@
         <img src="assets/logo.png" alt="Breaking Bytes logo" class="logo" />
         <h1>Modern software analysis solutions</h1>
         <p class="tagline">Static. Dynamic. Native. Android. All covered.</p>
+
+        <!-- Formgrid signup: redirects to thanks.html after submission -->
+        <form class="signup" action="https://formgrid.dev/api/f/lcwc0n41" method="POST">
+          <p class="signup-label">STAY IN THE LOOP</p>
+          <div class="signup-row">
+            <label class="visually-hidden" for="email">Email address</label>
+            <input class="signup-input" type="email" id="email" name="email"
+                   placeholder="you@example.com" required autocomplete="email" />
+            <!-- Honeypot: hidden from humans, bots fill it in -->
+            <input type="text" name="_gotcha" class="visually-hidden" tabindex="-1" autocomplete="off" />
+            <button class="signup-btn" type="submit">NOTIFY&nbsp;ME</button>
+          </div>
+        </form>
       </div>
     </div>
   </main>
