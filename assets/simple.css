@@ -3,6 +3,7 @@
   --fg: #e5e5e5;
   --dim: #6b6b70;
   --red: #dc2626;
+  --yellow: #f8e473;
   --red-bright: #ef4444;
   --red-dim: #7f1d1d;
   --line: #1c1c1f;
@@ -66,8 +67,8 @@ main,
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--red-bright);
-  box-shadow: 0 0 8px var(--red-bright);
+  background: var(--red);
+  box-shadow: 0 0 8px var(--red);
   animation: pulse 2.4s ease-in-out infinite;
 }
 
@@ -123,7 +124,7 @@ h1 {
   font-size: 12px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--yellow);
   margin: 0;
 }
 
