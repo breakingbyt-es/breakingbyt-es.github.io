@@ -1,22 +1,146 @@
+:root {
+  --bg: #030304;
+  --fg: #e5e5e5;
+  --dim: #6b6b70;
+  --red: #dc2626;
+  --red-bright: #ef4444;
+  --red-dim: #7f1d1d;
+  --line: #1c1c1f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  margin: auto;
-  width: auto;
-  padding: 50px;
-  font-family: Raleway, 'Arial', sans-serif;
-  color: #43576b;
-  background-color: black;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  font-family: Inter, 'Raleway', Arial, sans-serif;
+  color: var(--fg);
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Vanta.js topology canvas, fixed behind all content */
+#vanta-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.site-header,
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 28px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--dim);
+  /* border-bottom: 1px solid var(--line); */
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--red);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red-bright);
+  box-shadow: 0 0 8px var(--red-bright);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
 }
 
 /* Centered Image Code */
 
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .center {
-  height: 500px;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 50px 24px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+.logo {
+  width: clamp(320px, 55vw, 560px);
+  filter: drop-shadow(0 0 48px rgba(220, 38, 38, 0.32));
+}
+
+h1 {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  margin: 36px 0 12px;
+}
+
+.tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin: 0;
+}
+
+/* Footer */
+
+.site-footer {
+  padding: 18px 28px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--dim);
+  /* border-top: 1px solid var(--line); */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot {
+    animation: none;
+  }
 }
